@@ -1,4 +1,4 @@
-# Use the Eclipse temurin alpine official image
+    # Use the Eclipse temurin alpine official image
 # https://hub.docker.com/_/eclipse-temurin
 FROM eclipse-temurin:21-jdk-alpine
 
@@ -9,6 +9,7 @@ WORKDIR /app
 COPY . ./
 
 # Build the app.
+RUN chmod +x ./mvnw
 RUN ./mvnw -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
 
 # Run the quarkus app 
