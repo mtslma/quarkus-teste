@@ -18,7 +18,9 @@ Essa solução promove maior controle e comunicação eficiente entre as equipes
 
 ## 🚀 Deploy
 
-O projeto está hospedado em: [Railway](https://railway.app)
+A API pode ser acessada em [https://aumo-api-production.up.railway.app/](https://aumo-api-production.up.railway.app/)
+
+É necessário passar a API Key armazenada em "application.properties" nos headers da requisição. 
 
 ---
 
