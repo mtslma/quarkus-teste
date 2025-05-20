@@ -29,9 +29,8 @@ A API pode ser acessada em [https://aumo-api-production.up.railway.app/](https:/
 - Registro e gerenciamento de colaboradores que operam no sistema.
 - Registro e gerenciamento de alertas com diferentes níveis de gravidade.
 - Registro e gerenciamento de linhas e estações.
-- Registro e gerenciamento de manutenções programadas por estação, linha e colaborador.
-- Filtros com paginação e ordenação para entidades do sistema.
-- Validações robustas nas operações de escrita.
+- Registro e gerenciamento de manutenções programadas por linha e estação.
+- Registro e gerenciamento de mensagens de contato.
 
 ---
 
