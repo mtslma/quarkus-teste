@@ -126,6 +126,7 @@ A API pode ser acessada em [https://aumo-api-production.up.railway.app/](https:/
 | `GET`   | `/estacao/search` | Busca estações com filtros                         | 200, 400, 500              |
 | `GET`   | `/estacao/{id}`   | Busca uma estação por ID                           | 200, 404, 500              |
 | `PUT`   | `/estacao/{id}`   | Atualiza uma estação por ID                        | 200, 400, 404, 500         |
+| `PUT`   | `/estacao/status/{id}`   | Atualiza o status de uma estação por ID     | 200, 400, 404, 500         |
 | `DELETE`| `/estacao/{id}`   | Deleta uma estação por ID                          | 200, 404, 500              |
 
 ### 📑 Corpo para criação (`POST /estacao`)
@@ -160,6 +161,7 @@ A API pode ser acessada em [https://aumo-api-production.up.railway.app/](https:/
 | `GET`   | `/linha/search`  | Busca linhas com filtros                           | 200, 400, 500              |
 | `GET`   | `/linha/{id}`    | Busca uma linha por ID                             | 200, 404, 500              |
 | `PUT`   | `/linha/{id}`    | Atualiza uma linha por ID                          | 200, 400, 404, 500         |
+| `PUT`   | `/linha/status/{id}`   | Atualiza o status de uma linha por ID      | 200, 400, 404, 500         |
 | `DELETE`| `/linha/{id}`    | Deleta uma linha por ID                            | 200, 404, 500              |
 
 ### 📑 Corpo para criação (`POST /linha`)
