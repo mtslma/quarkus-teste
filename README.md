@@ -226,9 +226,6 @@ A API pode ser acessada em [https://aumo-api-production.up.railway.app/](https:/
 |--------:|-------------------------------|-----------------------------------------------------|----------------------------|
 | `POST`  | `/mensagem`                   | Cria uma nova mensagem de contato                   | 201, 400, 500              |
 | `GET`   | `/mensagem/search`            | Busca mensagens com filtros                         | 200, 400, 500              |
-| `GET`   | `/mensagem/search/deleted`    | Busca mensagens deletadas com filtros               | 200, 400, 500              |
-| `GET`   | `/mensagem/{id}`              | Busca uma mensagem por ID                           | 200, 404, 500              |
-| `GET`   | `/mensagem/{id}/deleted`      | Busca uma mensagem deletada por ID                  | 200, 404, 500              |
 | `DELETE`| `/mensagem/{id}`              | Deleta uma mensagem por ID                          | 200, 404, 500              |
 
 ### 📑 Exemplo de corpo (`POST /mensagem`)
