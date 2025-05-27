@@ -2,28 +2,29 @@ package fiap.tds.entities;
 
 import java.time.LocalDateTime;
 
-public class SessaoColaborador {
+public class SessaoUsuario {
 
     private int idSessao;
+    private int idUsuario;
     private String tokenSessao;
-    private int idColaborador;
     private LocalDateTime dataLogin = LocalDateTime.now();
     private LocalDateTime dataLogout;
-    private String statusSessao; // Corrigido o nome (statuSesssao)
+    private String statusSessao;
 
-    public SessaoColaborador() {
+    // Construtores
+    public SessaoUsuario() {
     }
 
-    public SessaoColaborador(LocalDateTime dataLogin, LocalDateTime dataLogout, int idColaborador, int idSessao, String statusSessao, String tokenSessao) {
+    public SessaoUsuario(LocalDateTime dataLogin, LocalDateTime dataLogout, int idSessao, int idUsuario, String statusSessao, String tokenSessao) {
         this.dataLogin = dataLogin;
         this.dataLogout = dataLogout;
-        this.idColaborador = idColaborador;
         this.idSessao = idSessao;
+        this.idUsuario = idUsuario;
         this.statusSessao = statusSessao;
         this.tokenSessao = tokenSessao;
     }
 
-    // Getters e Setters
+    // Getters and Setters
     public LocalDateTime getDataLogin() {
         return dataLogin;
     }
@@ -40,20 +41,20 @@ public class SessaoColaborador {
         this.dataLogout = dataLogout;
     }
 
-    public int getIdColaborador() {
-        return idColaborador;
-    }
-
-    public void setIdColaborador(int idColaborador) {
-        this.idColaborador = idColaborador;
-    }
-
     public int getIdSessao() {
         return idSessao;
     }
 
     public void setIdSessao(int idSessao) {
         this.idSessao = idSessao;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getStatusSessao() {
