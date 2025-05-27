@@ -86,33 +86,56 @@ A API pode ser acessada em [https://aumo-api-production.up.railway.app/](https:/
 
 ---
 
-## 📍 `/colaborador`
+## 📍 `/usuario`
 
-| Método  | Endpoint            | Descrição                                           | Códigos de status         |
-|--------:|---------------------|-----------------------------------------------------|----------------------------|
-| `POST`  | `/colaborador`      | Registra um novo colaborador                       | 201, 400, 500              |
-| `GET`   | `/colaborador/search` | Busca colaboradores com filtros                  | 200, 400, 500              |
-| `GET`   | `/colaborador/{id}` | Busca um colaborador por ID                        | 200, 404, 500              |
-| `PUT`   | `/colaborador/{id}` | Atualiza nome e tipo de colaborador por ID         | 200, 400, 404, 500         |
-| `DELETE`| `/colaborador/{id}` | Deleta um colaborador por ID                       | 200, 404, 500              |
+| Método  | Endpoint          | Descrição                               | Códigos de status         |
+|--------:|-------------------|-----------------------------------------|----------------------------|
+| `POST`  | `/usuario`        | Registra um novo usuários               | 201, 400, 500              |
+| `GET`   | `/usuario/search` | Busca usuários com filtros              | 200, 400, 500              |
+| `GET`   | `/usuario/{id}`   | Busca um usuários por ID                | 200, 404, 500              |
+| `PUT`   | `/usuario/{id}`   | Atualiza nome e tipo de usuários por ID | 200, 400, 404, 500         |
+| `DELETE`| `/usuario/{id}`   | Deleta um usuário por ID                | 200, 404, 500              |
 
-### 📑 Corpo para criação (`POST /colaborador`)
+### 📑 Corpo para criação (`POST /usuario`)
 ```json
 {
-  "nomeColaborador": "Max Emilian",
-  "tipoColaborador": "ADMIN",
-  "autenticaColaborador": {
-    "email": "exemplocolab@email.com",
-    "senha": "maxverstappen33"
-  }
+  "nomeUsuario": "Mateus",
+  "tipoUsuario": "CLIENTE",
+  "autenticaUsuario": {
+    "emailUsuario": "devmtslma@email.com",
+    "senhaUsuario": "senha1234"
+  },
+  "telefoneContato": "+55 11 12345-6789",
+  "idCidade": 2
 }
 ```
 
-### 📝 Corpo para atualização (`PUT /colaborador`)
+### 📝 Corpo para atualização (`PUT /usuario`)
 ```json
 {
-  "nomeColaborador": "Gabriel Bortoleto",
-  "tipoColaborador": "OPERADOR"
+  "nomeUsuario": "Mateus Lima",
+  "telefoneContato": "+55 11 98765-4321",
+  "idCidade": 2
+}
+```
+
+## 📍 `/cidades`
+
+| Método  | Endpoint          | Descrição                                     | Códigos de status               |
+|--------:|-------------------|-----------------------------------------------|----------------------------------|
+| `POST`  | `/cidades`        | Registra uma nova cidade a partir de um CEP   | 201, 400, 500, 503               |
+| `GET`   | `/cidades/search` | Busca cidades com filtros (nome, paginação)   | 200, 400, 500                    |
+| `GET`   | `/cidades/{id}`   | Busca uma cidade por ID                       | 200, 404, 500                    |
+| `PUT`   | `/cidades/{id}`   | Atualiza dados de uma cidade por ID           | 200, 400, 404, 500, 503         |
+| `DELETE`| `/cidades/{id}`   | Deleta (logicamente) uma cidade por ID        | 200, 404, 500                    |
+
+### 📑 Corpo para criação (`POST /cidades`)
+Este endpoint utiliza um CEP para buscar informações da cidade e suas coordenadas (atualmente simuladas). O `nomeCidade` é opcional; se fornecido, pode sobrescrever o nome obtido pelo ViaCEP.
+
+```json
+{
+  "cep": "01001000",
+  "nomeCidade": "São Paulo"
 }
 ```
 

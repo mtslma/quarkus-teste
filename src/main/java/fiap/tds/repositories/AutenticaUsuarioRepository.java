@@ -39,11 +39,12 @@ public class AutenticaUsuarioRepository {
     }
 
     // Função para autenticar usuários
+    // Função para autenticar usuários
     public AutenticaUsuario autenticar(AutenticaUsuarioDto dto){
 
-        var query = "SELECT A.ID_USUARIO, A.EMAIL_USUARIO, A.SENHA_USUARIO, C.NM_USUARIO" +
+        var query = "SELECT A.ID_USUARIO, A.EMAIL_USUARIO, A.SENHA_USUARIO, C.NM_USUARIO, C.TP_USUARIO " +
                 "FROM T_POSE_AUTENTICA_USUARIO A " +
-                "JOIN T_POSE_USUARIO C ON A.ID_USUARIO = C.ID_USUARIO" +
+                "JOIN T_POSE_USUARIO C ON A.ID_USUARIO = C.ID_USUARIO " +
                 "WHERE A.EMAIL_USUARIO = ?";
 
         try (var conn = DatabaseConfig.getConnection();
@@ -63,8 +64,8 @@ public class AutenticaUsuarioRepository {
                     // Cria e retorna o objeto de autenticação com os dados do colaborador
                     AutenticaUsuario autenticaUsuario = new AutenticaUsuario();
                     autenticaUsuario.setIdUsuario(res.getInt("ID_USUARIO"));
-                    autenticaUsuario.setEmailUsuario(res.getString("EMAIL"));
-                    autenticaUsuario.setSenhaUsuario(res.getString("SENHA"));
+                    autenticaUsuario.setEmailUsuario(res.getString("EMAIL_USUARIO")); // Correção
+                    autenticaUsuario.setSenhaUsuario(res.getString("SENHA_USUARIO")); // Correção
 
                     logger.info("✅ Autenticação do usuário {} realizada com sucesso!", dto.emailUsuario());
                     return autenticaUsuario; // Retorna o objeto de autenticação do colaborador
